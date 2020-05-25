@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="js/rainbow.js"></script>
+    <title>Spirograph</title>
+</head>
+<script>
+    var tag = document.createElement("script");
+    tag.src = "js/spirograph.js";
+    document.getElementsByTagName("head")[0].appendChild(tag);
+</script>
+
+<body>
+    <div class="menu">
+        <div class="title">
+            <h1>Spirograph</h1>
+            <button type="button" id="demoToggle" onclick="toggleDemo()"></button>
+        </div>
+        <div class="presets">
+            <h3>Presets:</h3>
+            <select name="dropdown" id="presetDropdown" onclick="presetSelect(false)"></select>
+            <button type="button" id="savePreset" onclick="savePreset()">Save Preset</button>
+            <button type="button" id="deletePreset" onclick="deletePreset()">Delete Preset</button>
+            <button type="button" id="deleteAllPresets" onclick="deleteAllPresets()">Delete All Presets</button>
+        </div>
+        <div class="options">
+            <h3>Options:</h3>
+            <button type="button" id="randomizeButton" onclick="resetValues(false)">Randomize Values</button>
+            <button type="button" id="defaultButton" onclick="resetValues(true)">Reset To Default</button>
+            <button type="button" id="colorToggle" onclick="toggleColour()"></button>
+            <button type="button" id="directionButton" onclick="changeDirection()"></button>
+            <button type="button" id="timingButton" onclick="changeTiming()"></button>
+        </div>
+    </div>
+    <container id="solarsystem"></container>
+    <h1 id="demotext"></h1>
+    <centre id="centre"></centre>
+</body>
+<script>
+    window.onload = function() {
+        demoStart(true);
+    };
+</script></html>
